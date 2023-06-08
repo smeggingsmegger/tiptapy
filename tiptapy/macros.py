@@ -5,10 +5,10 @@ from string import Template
 
 
 def make_img_src(attrs):
-    alt = attrs.get('alt', '').strip()
+    alt = str(attrs.get('alt', "")).strip()
     height = attrs.get('height', '')
     width = attrs.get('width', '')
-    fallback_url = attrs['src']['fallback']
+    fallback_url = attrs['src']
     image_src = f'img src="{fallback_url}"'
     if alt:
         image_src += f' alt="{escape(alt)}"'

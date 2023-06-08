@@ -1,0 +1,11 @@
+{%- set checked = node.attrs.checked|default("") -%}
+<div class="cdx-checklist__item cdx-checklist__item--{{ checked }}">
+  <span class="cdx-checklist__item-checkbox"></span>
+  <div class="cdx-checklist__item-text">
+    {%- for item in node.content -%}
+    {%- with template=item.type + '.html', node=item -%}
+        {%- include template -%}
+          {%- endwith -%}
+    {%- endfor -%}
+  </div>
+</div>

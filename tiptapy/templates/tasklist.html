@@ -1,0 +1,14 @@
+<div class="cdx-block cdx-checklist">
+    {%- for item in node.content -%}
+        {%- with template=item.type + '.html', node=item -%} 
+            {%- include template -%}
+        {%- endwith -%}
+    {%- endfor -%}
+</div>
+
+<!--<div class="cdx-block cdx-checklist">
+    <div class="cdx-checklist__item cdx-checklist__item--checked">
+        <span class="cdx-checklist__item-checkbox"></span>
+        <div class="cdx-checklist__item-text">One Item</div>
+    </div>
+</div>-->
